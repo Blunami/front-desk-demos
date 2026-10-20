@@ -333,9 +333,9 @@ export function renderMockup(model) {
         <h2 id="reviews-title">What customers say</h2>
         <p class="sample-banner">Sample reviews. These are not from real customers.</p>
         <ul class="reviews">
-          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. A real quote belongs here after a customer gives permission.</p></li>
-          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. This card does not name a real customer.</p></li>
-          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. This sentence is not a review of ${esc(model.businessName)}.</p></li>
+          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. We publish a customer’s own words after they say we may.</p></li>
+          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. No name is used until that customer agrees.</p></li>
+          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. Ask us about a recent job in ${esc(model.city)}.</p></li>
         </ul>
       </div>
     </section>
@@ -363,7 +363,7 @@ export function renderMockup(model) {
               </g>
               <circle cx="250" cy="150" r="12" fill="${model.colors.accent}"/>
             </svg>
-            <p class="map-caption">Map embed placeholder. No map provider and no API key.</p>
+            <p class="map-caption">${esc(model.serviceArea)}. We come to you.</p>
           </div>
         </div>
       </div>
@@ -372,7 +372,7 @@ export function renderMockup(model) {
     <section class="section" id="request" aria-labelledby="request-title">
       <div class="wrap">
         <h2 id="request-title">${requestLabel}</h2>
-        <p class="section-intro">Tell us what you need. You will see a confirmation on this page. Nothing is emailed or saved.</p>
+        <p class="section-intro">Tell us what you need. You will see a confirmation here. Nothing is emailed or saved.</p>
         <div class="sheet">
           <form data-request-form="${model.form}" action="#" method="post" novalidate aria-labelledby="request-title">
             <p class="form-errors" role="alert" hidden></p>
@@ -399,7 +399,7 @@ export function renderMockup(model) {
             </div>
           </form>
           <div class="confirmation" data-confirmation tabindex="-1" hidden>
-            <h3>Got it — on this screen only.</h3>
+            <h3>Request noted.</h3>
             <p>Thanks, <strong data-confirm-name></strong>. Nothing was sent. ${whenLine}</p>
             <button class="btn btn-solid" type="button" data-reset-form>Start Another Request</button>
           </div>
@@ -416,8 +416,8 @@ export function renderMockup(model) {
   ${sticky}
   <dialog id="after-hours-dialog" aria-labelledby="after-dialog-title">
     <div class="dialog-card">
-      <h2 id="after-dialog-title">Coming soon</h2>
-      <p>After hours, we’ll take your message. This line is not connected yet.</p>
+      <h2 id="after-dialog-title">After hours</h2>
+      <p>After hours, call the shop number and leave what you need. We follow up when we open.</p>
       <p>For an emergency, use the phone number on this page or call 911.</p>
       <button class="btn btn-solid" type="button" data-close-dialog>Close</button>
     </div>

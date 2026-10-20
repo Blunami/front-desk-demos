@@ -2,6 +2,8 @@
 
 Same rules as `design/guidelines-before.md`. Reviewed again after the fixes, including a page regenerated from `mockups/_example/config.json`.
 
+Re-reviewed on 2026-10-20 after merging main (PR #4). Customer-facing sentences from that pull request stay. Button labels stay in Title Case. Counts did not change.
+
 ## Counts
 
 | Page | Before | After |
