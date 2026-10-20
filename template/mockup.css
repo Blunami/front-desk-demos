@@ -106,9 +106,15 @@
 }
 
 html {
+  color-scheme: light;
   scroll-padding-top: 5.5rem;
   scroll-padding-bottom: var(--sticky-h);
   scrollbar-color: var(--accent) var(--paper);
+}
+
+html:has(body[data-theme="trade"]),
+html:has(body[data-category="barber"]) {
+  color-scheme: dark;
 }
 
 body {
@@ -119,6 +125,8 @@ body {
   font-size: 1.0625rem;
   line-height: 1.55;
   font-synthesis: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -249,6 +257,19 @@ svg {
   align-items: center;
 }
 
+.header-call:hover,
+.sticky-call:hover,
+.btn-solid:hover,
+.after-hours-btn:hover,
+.phone-board:hover {
+  filter: brightness(1.12);
+}
+
+.nav a:hover,
+.text-link:hover {
+  text-decoration-thickness: 3px;
+}
+
 .hero,
 .section {
   padding: 1.5rem 0 2rem;
@@ -286,6 +307,13 @@ h3,
 h1 {
   font-size: clamp(2.4rem, 7vw, 4.6rem);
   max-width: 16ch;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  scroll-margin-top: 6rem;
 }
 
 h2 {
@@ -367,6 +395,9 @@ h2 {
 }
 
 .after-hours-btn {
+  align-self: start;
+  justify-self: start;
+  height: auto;
   width: min(100%, 22rem);
 }
 
@@ -548,6 +579,7 @@ dialog {
   padding: 0;
   background: transparent;
   max-width: min(28rem, calc(100% - 2rem));
+  overscroll-behavior: contain;
 }
 
 dialog::backdrop {

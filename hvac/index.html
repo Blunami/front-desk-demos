@@ -35,7 +35,7 @@
           <h1 id="hero-title">Heat that holds when weather comes off the Peak.</h1>
           <p class="lede">No-heat calls, tune-ups, and replacements for west-side houses. The diagnostic is $89 and comes off the repair. Ochre &amp; Flue is a fictional shop.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#quote">Request a quote</a>
+            <a class="btn btn-primary" href="#quote">Request a Quote</a>
             <a class="btn btn-ghost" href="tel:+17195550142">Call (719) 555-0142</a>
           </div>
           <dl class="hero-facts">
@@ -78,7 +78,7 @@
           data-agent-id=""
           aria-haspopup="dialog"
           aria-controls="after-hours-dialog"
-        >Call after hours</button>
+        >Call After Hours</button>
       </div>
     </section>
 
@@ -223,7 +223,7 @@
 
     <section class="section" id="quote" aria-labelledby="quote-title">
       <div class="wrap">
-<h2 id="quote-title">Request a quote</h2>
+<h2 id="quote-title">Request a Quote</h2>
         <p class="section-intro">The form checks what you typed and then shows a confirmation. It does not send email, text, or a lead anywhere.</p>
         <div class="quote-sheet">
           <form id="quote-form" action="#" method="post" novalidate aria-labelledby="quote-title">
@@ -232,22 +232,22 @@
               <div class="field">
                 <label for="quote-name">Full name</label>
                 <input id="quote-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="quote-name-error">
-                <p class="field-error" id="quote-name-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="quote-name-error" hidden></p>
               </div>
               <div class="field">
                 <label for="quote-phone">Phone</label>
                 <input id="quote-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" aria-describedby="quote-phone-error">
-                <p class="field-error" id="quote-phone-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="quote-phone-error" hidden></p>
               </div>
               <div class="field">
                 <label for="quote-email">Email</label>
-                <input id="quote-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="120" aria-describedby="quote-email-error">
-                <p class="field-error" id="quote-email-error" hidden></p>
+                <input id="quote-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required maxlength="120" aria-describedby="quote-email-error">
+                <p class="field-error" aria-live="polite" id="quote-email-error" hidden></p>
               </div>
               <div class="field">
                 <label for="quote-address">Service address</label>
                 <input id="quote-address" name="address" type="text" autocomplete="street-address" required maxlength="160" aria-describedby="quote-address-error">
-                <p class="field-error" id="quote-address-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="quote-address-error" hidden></p>
               </div>
               <div class="field">
                 <label for="quote-service">What do you need?</label>
@@ -261,7 +261,7 @@
                   <option>Thermostat</option>
                   <option>Something else</option>
                 </select>
-                <p class="field-error" id="quote-service-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="quote-service-error" hidden></p>
               </div>
               <div class="field">
                 <label for="quote-timing">Preferred time</label>
@@ -271,22 +271,22 @@
                   <option>Afternoon</option>
                   <option>Next available</option>
                 </select>
-                <p class="field-error" id="quote-timing-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="quote-timing-error" hidden></p>
               </div>
               <div class="field span-2">
                 <label for="quote-details">What is going on? <span class="optional">(optional)</span></label>
                 <textarea id="quote-details" name="details" maxlength="600" aria-describedby="quote-details-error"></textarea>
-                <p class="field-error" id="quote-details-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="quote-details-error" hidden></p>
               </div>
               <div class="field span-2">
-                <button class="btn btn-ink" type="submit">Request a quote</button>
+                <button class="btn btn-ink" type="submit">Request a Quote</button>
               </div>
             </div>
           </form>
           <div class="confirmation" id="quote-confirmation" tabindex="-1" hidden>
             <h3>Noted — on this screen only.</h3>
             <p>Thanks, <strong data-confirm-name></strong>. Nothing was sent. A real shop would call <span data-confirm-phone></span> about <span data-confirm-service></span>.</p>
-            <button class="btn btn-ink btn-auto" type="button" id="quote-reset">Start another request</button>
+            <button class="btn btn-ink btn-auto" type="button" id="quote-reset">Start Another Request</button>
           </div>
         </div>
       </div>
@@ -301,7 +301,7 @@
   </footer>
 
   <a class="sticky-call" href="tel:+17195550142">
-    <span>Call the shop</span>
+    <span>Call the Shop</span>
     <small>(719) 555-0142</small>
   </a>
 

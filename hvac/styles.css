@@ -49,6 +49,7 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-padding-top: 5.5rem;
   scroll-padding-bottom: var(--sticky-h);
   scrollbar-color: var(--phone) var(--board);
@@ -62,6 +63,8 @@ body {
   font-size: 1.0625rem;
   line-height: 1.55;
   font-synthesis: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -171,6 +174,8 @@ svg {
   letter-spacing: -0.02em;
   margin: 0 0 0.6rem;
   overflow-wrap: anywhere;
+  text-wrap: balance;
+  scroll-margin-top: 6rem;
 }
 
 .hero h1 {
@@ -214,6 +219,20 @@ svg {
   background: var(--phone);
   color: var(--phone-ink);
   border-color: var(--phone);
+}
+
+.btn-primary:hover,
+.btn-ink:hover,
+.after-hours-btn:hover,
+.header-call:hover,
+.sticky-call:hover {
+  background: #ffe08a;
+}
+
+.btn-ghost:hover,
+.nav a:hover,
+.text-link:hover {
+  background: rgba(243, 246, 241, 0.12);
 }
 
 .hero-facts {
@@ -267,6 +286,9 @@ h3 {
 }
 
 .after-hours-btn {
+  align-self: start;
+  justify-self: start;
+  height: auto;
   min-height: 3.25rem;
   width: min(100%, 22rem);
   font-size: 1.05rem;
@@ -488,6 +510,7 @@ dialog {
   padding: 0;
   background: transparent;
   max-width: min(28rem, calc(100% - 2rem));
+  overscroll-behavior: contain;
 }
 
 dialog::backdrop {
