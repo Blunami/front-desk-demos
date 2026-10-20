@@ -6,7 +6,7 @@
     "headline": "Fast, honest heating and cooling repair in {city}.",
     "lede": "No-heat and no-cool calls, tune-ups, and replacements. We quote the work before we start.",
     "safety": "If you smell gas or a carbon-monoxide alarm sounds, leave the building and call 911.",
-    "colors": { "primary": "#1c3d36", "accent": "#e2a23a" },
+    "colors": { "primary": "#143028", "accent": "#f2c14e" },
     "services": [
       { "name": "Furnace repair", "detail": "No-heat calls, ignition, limits, and heat exchangers.", "price": "Quoted on site" },
       { "name": "Cooling repair", "detail": "When a room will not catch up on a hot afternoon.", "price": "Quoted on site" },
@@ -23,7 +23,7 @@
     "headline": "Fast plumbing help in {city}.",
     "lede": "Leaks, water heaters, and slow drains. Call anytime — after hours we'll take your message.",
     "safety": "If sewage is backing into the house, or you smell gas, leave and call for emergency help.",
-    "colors": { "primary": "#16324a", "accent": "#d28a3a" },
+    "colors": { "primary": "#1a3148", "accent": "#f2c14e" },
     "services": [
       { "name": "Drain cleaning", "detail": "Slow sinks, tubs, and main-line stoppages.", "price": "Quoted on site" },
       { "name": "Leak repair", "detail": "Supply lines, valves, and the drip that stains a ceiling.", "price": "Quoted on site" },
@@ -40,7 +40,7 @@
     "headline": "Cuts and color in {city}.",
     "lede": "A clear menu and a time you can request. After we close, call and we'll take your message.",
     "safety": "",
-    "colors": { "primary": "#3a2430", "accent": "#e7a27a" },
+    "colors": { "primary": "#172226", "accent": "#9c3b45" },
     "services": [
       { "name": "Cut and style", "detail": "A wash, a cut, and a finish that can take the wind.", "price": "See menu" },
       { "name": "Blowout", "detail": "Smooth, for an evening or a photo.", "price": "See menu" },
@@ -57,7 +57,7 @@
     "headline": "Cuts and shaves in {city}.",
     "lede": "A chair, a straight menu, and a phone that still takes a message after close.",
     "safety": "",
-    "colors": { "primary": "#2c261f", "accent": "#c6a15a" },
+    "colors": { "primary": "#161311", "accent": "#e6c27a" },
     "services": [
       { "name": "Haircut", "detail": "Scissor or clipper, finished with a neck clean.", "price": "See menu" },
       { "name": "Beard trim", "detail": "Shape, length, and a clean cheek line.", "price": "See menu" },
@@ -74,7 +74,7 @@
     "headline": "Local service in {city}.",
     "lede": "See the work, the hours, and how to ask for a quote. Call anytime — after hours we'll take your message.",
     "safety": "",
-    "colors": { "primary": "#243028", "accent": "#d4893a" },
+    "colors": { "primary": "#1c2830", "accent": "#e0a15a" },
     "services": [
       { "name": "Service call", "detail": "A visit to see the job in person.", "price": "Call for a price" },
       { "name": "Estimate", "detail": "A written range after we look.", "price": "No charge to ask" },

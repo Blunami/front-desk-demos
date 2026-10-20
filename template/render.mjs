@@ -222,7 +222,9 @@ export function renderMockup(model) {
     : `<span class="monogram" aria-hidden="true">${esc(model.initials)}</span>`;
   const art = model.photo
     ? `<img class="hero-photo" src="${esc(model.photo)}" alt="">`
-    : `<p class="art-initials" aria-hidden="true">${esc(model.initials)}</p>${artMarkup(model.category)}`;
+    : (model.tel
+      ? `<a class="phone-board" href="tel:${esc(model.tel)}">${esc(model.phone)}</a>`
+      : `<p class="art-initials" aria-hidden="true">${esc(model.initials)}</p>`);
   const requestLabel = model.form === "booking" ? "Request a booking" : "Request a quote";
   const requestNav = model.form === "booking" ? "Book" : "Quote";
   const safety = model.safety ? `<p class="safety">${esc(model.safety)}</p>` : "";
@@ -231,10 +233,10 @@ export function renderMockup(model) {
     ? `You asked for <span data-confirm-service></span> on <span data-confirm-when></span>.`
     : `You asked about <span data-confirm-service></span> (<span data-confirm-when></span>).`;
   const fonts = model.theme === "care"
-    ? `<link rel="preload" href="../../assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin>`
-    : `<link rel="preload" href="../../assets/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/source-sans-3-400.woff2" as="font" type="font/woff2" crossorigin>`;
+    ? `<link rel="preload" href="../../assets/fonts/besley-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/karla-400.woff2" as="font" type="font/woff2" crossorigin>`
+    : `<link rel="preload" href="../../assets/fonts/big-shoulders-display-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/atkinson-hyperlegible-400.woff2" as="font" type="font/woff2" crossorigin>`;
   const schedule = JSON.stringify({ tz: model.timezone, days: model.schedule }).replace(/</g, "\\u003c");
   const concept = `Concept preview prepared for ${model.businessName} by Local Digital Front Desk — not a live site`;
 
@@ -279,7 +281,6 @@ export function renderMockup(model) {
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">${esc(model.label)} · ${esc(model.city)}</p>
           <h1 id="hero-title">${esc(model.headline)}</h1>
           <p class="lede">${esc(model.lede)} Service area: ${esc(model.serviceArea)}.</p>
           <div class="hero-actions">
@@ -298,7 +299,6 @@ export function renderMockup(model) {
     <section class="section after-hours" id="after-hours" aria-labelledby="after-title">
       <div class="wrap after-layout">
         <div>
-          <p class="kicker">After hours</p>
           <h2 id="after-title">Call anytime. After hours, we'll take your message.</h2>
           <p class="section-intro">When we are closed, call and leave what you need. We follow up when we open.</p>
           ${safety}
@@ -322,7 +322,6 @@ export function renderMockup(model) {
 
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="wrap">
-        <p class="kicker">Services</p>
         <h2 id="services-title">${model.form === "booking" ? "What you can book" : "What we quote"}</h2>
         <p class="section-intro">${model.form === "booking" ? "Choose a service and request a time." : "Choose a service and tell us what is going on. We quote the job before we start."}</p>
         <ul class="services">${serviceItems(model.services)}</ul>
@@ -331,7 +330,6 @@ export function renderMockup(model) {
 
     <section class="section" id="reviews" aria-labelledby="reviews-title">
       <div class="wrap">
-        <p class="kicker">Reviews</p>
         <h2 id="reviews-title">What customers say</h2>
         <p class="sample-banner">Sample reviews. These are not from real customers.</p>
         <ul class="reviews">
@@ -345,7 +343,6 @@ export function renderMockup(model) {
     <section class="section" id="hours" aria-labelledby="hours-title">
       <div class="wrap visit-grid">
         <div>
-          <p class="kicker">Hours</p>
           <h2 id="hours-title">When we are open</h2>
           <p class="status" id="shop-status" role="status">Hours below are ${esc(model.timezone === "America/Denver" ? "Mountain Time" : model.timezone.replaceAll("_", " "))}.</p>
           <table class="hours">
@@ -364,9 +361,7 @@ export function renderMockup(model) {
                 <path d="M24 40 H616 M24 110 H616 M24 180 H616 M24 250 H616"/>
                 <path d="M80 16 V304 M200 16 V304 M320 16 V304 M460 16 V304 M560 16 V304"/>
               </g>
-              <circle cx="250" cy="150" r="12" fill="${model.colors.primary}"/>
-              <text x="276" y="146" fill="#1b1915" font-family="Georgia, serif" font-size="28">Map placeholder</text>
-              <text x="276" y="180" fill="#1b1915" font-family="Georgia, serif" font-size="22">Not a live map</text>
+              <circle cx="250" cy="150" r="12" fill="${model.colors.accent}"/>
             </svg>
             <p class="map-caption">Map embed placeholder. No map provider and no API key.</p>
           </div>
@@ -376,7 +371,6 @@ export function renderMockup(model) {
 
     <section class="section" id="request" aria-labelledby="request-title">
       <div class="wrap">
-        <p class="kicker">${model.form === "booking" ? "Booking" : "Quote"}</p>
         <h2 id="request-title">${requestLabel}</h2>
         <p class="section-intro">Tell us what you need. You will see a confirmation on this page. Nothing is emailed or saved.</p>
         <div class="sheet">

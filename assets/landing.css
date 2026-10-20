@@ -1,56 +1,30 @@
 @font-face {
-  font-family: "Fraunces";
+  font-family: "Big Shoulders Local";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: url("fonts/fraunces-600.woff2") format("woff2");
+  src: url("fonts/big-shoulders-display-700.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Source Sans 3";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/source-sans-3-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Source Sans 3";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("fonts/source-sans-3-600.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("fonts/cormorant-garamond-600.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Outfit";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/outfit-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Outfit";
+  font-family: "Besley Local";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/outfit-500.woff2") format("woff2");
+  src: url("fonts/besley-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Atkinson Local";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/atkinson-hyperlegible-400.woff2") format("woff2");
 }
 
 :root {
-  --ink: #1c1712;
-  --paper: #f4eee4;
-  --muted: #d9cfc2;
-  --ochre: #e0a24a;
+  --ink: #f3f6f1;
+  --body: "Atkinson Local", "Segoe UI", sans-serif;
 }
 
 *,
@@ -60,21 +34,26 @@
 }
 
 html {
-  scroll-behavior: auto;
+  scrollbar-color: #f2c14e #143028;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  background: #143028;
+  color: var(--ink);
+  font-family: var(--body);
   font-size: 1.0625rem;
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+::selection {
+  background: #f2c14e;
+  color: #142018;
 }
 
 :focus-visible {
-  outline: 3px solid var(--ochre);
+  outline: 3px solid #f2c14e;
   outline-offset: 3px;
 }
 
@@ -82,189 +61,106 @@ body {
   position: absolute;
   left: 1rem;
   top: -4rem;
-  z-index: 5;
-  background: var(--paper);
-  color: var(--ink);
-  padding: 0.6rem 0.9rem;
+  background: #f2c14e;
+  color: #142018;
+  padding: 0.55rem 0.8rem;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .skip:focus {
-  top: 1rem;
+  top: 0.6rem;
 }
 
 .intro {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  padding: 1.25rem 1.25rem 1.5rem;
+  padding: 1.5rem 1.25rem 0.5rem;
+  max-width: 40rem;
 }
 
-.brand-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 2.5rem;
-}
-
-.brand-mark {
-  margin: 0;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.brand-note {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-h1 {
-  margin: 0;
-  max-width: 16ch;
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(2.5rem, 7vw, 4.6rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
+.intro h1 {
+  font-family: "Atkinson Local", "Segoe UI", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  line-height: 1.35;
+  font-weight: 400;
+  margin: 0 0 0.6rem;
 }
 
 .lede {
-  max-width: 42rem;
-  margin: 1.1rem 0 0;
-  color: var(--muted);
-  font-size: 1.125rem;
+  margin: 0;
+  color: #d5e2d8;
 }
 
 .deck {
   display: grid;
-  grid-template-columns: 1fr;
 }
 
-.demo-card {
+.panel {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-  min-height: 26rem;
-  padding: 1.5rem 1.25rem 1.4rem;
+  justify-content: flex-end;
+  min-height: 46vh;
+  padding: 1.5rem 1.25rem 1.75rem;
   text-decoration: none;
   color: inherit;
 }
 
-.demo-card-hvac {
-  background: #241f1b;
-  color: #f4eee4;
+.panel h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1.3;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
-.demo-card-salon {
-  background: #fbf6f1;
-  color: #24161c;
+.panel p {
+  margin: 0;
+  max-width: 36rem;
 }
 
-.kicker {
-  margin: 0 0 0.8rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.panel-hvac {
+  background: #143028;
+  color: #f3f6f1;
+  border-top: 1px solid rgba(243, 246, 241, 0.28);
 }
 
-.demo-card-hvac .kicker {
-  color: #e0a24a;
-  font-family: "Source Sans 3", sans-serif;
+.panel-hvac h2 {
+  font-family: "Big Shoulders Local", "Arial Narrow", sans-serif;
+  color: #f2c14e;
 }
 
-.demo-card-salon .kicker {
-  color: #8a4b2c;
-  font-family: "Outfit", sans-serif;
+.panel-salon {
+  background: #d5e3e6;
+  color: #172226;
+}
+
+.panel-salon h2 {
+  font-family: "Besley Local", Georgia, serif;
   font-weight: 500;
 }
 
-.demo-card h2 {
-  margin: 0;
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-}
-
-.demo-card-hvac h2 {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  max-width: 10ch;
-}
-
-.demo-card-salon h2 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(2.8rem, 7vw, 4.6rem);
-  max-width: 12ch;
-}
-
-.demo-card p {
-  margin: 0.9rem 0 0;
-  max-width: 36ch;
-  font-size: 1.05rem;
-}
-
-.demo-card-salon p {
-  font-family: "Outfit", sans-serif;
-}
-
-.card-foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem;
-}
-
-.card-cta {
-  font-weight: 600;
-  border-bottom: 2px solid currentColor;
-  padding-bottom: 0.1rem;
-}
-
-.mini-art {
-  width: 7.5rem;
-  height: auto;
-  flex: none;
+.panel-salon:focus-visible {
+  outline-color: #172226;
 }
 
 .site-footer {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  padding: 1.25rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.site-footer p {
   margin: 0;
-  max-width: 46rem;
+  padding: 1rem 1.25rem 1.4rem;
+  background: #d5e3e6;
+  color: #2c4348;
 }
 
-@media (min-width: 800px) {
-  .intro {
-    padding-top: 2rem;
-  }
-
+@media (min-width: 900px) {
   .deck {
     grid-template-columns: 1fr 1fr;
-    min-height: calc(100vh - 22rem);
+    min-height: calc(100vh - 12rem);
   }
 
-  .demo-card {
-    min-height: 32rem;
-    padding: 2rem 1.75rem;
+  .panel {
+    min-height: 70vh;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    scroll-behavior: auto !important;
+  .site-footer {
+    background: #143028;
+    color: #d5e2d8;
   }
 }
