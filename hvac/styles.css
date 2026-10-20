@@ -85,8 +85,60 @@ body {
 }
 
 @media (max-width: 767px) {
+  html {
+    scroll-padding-bottom: calc(var(--sticky-h) + 1rem);
+  }
+
   body {
     padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom));
+  }
+
+  .btn,
+  button,
+  input,
+  select,
+  textarea,
+  .field,
+  .confirmation,
+  .hero-art {
+    scroll-margin-bottom: calc(var(--sticky-h) + 1rem);
+  }
+
+  .hero {
+    padding-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    margin-top: 0.75rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+  }
+
+  .hero-actions .btn {
+    padding-inline: 0.45rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .hero-facts {
+    margin-top: 0.85rem;
+  }
+
+  .hero-facts dd {
+    font-size: 0.9rem;
+  }
+
+  .hero-art {
+    margin-top: 4.75rem;
   }
 }
 
@@ -294,8 +346,9 @@ h1 {
 
 .hero-facts {
   display: grid;
-  gap: 0.9rem;
-  margin: 1.6rem 0 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
 }
 
 .hero-facts div {
@@ -775,10 +828,6 @@ dialog::backdrop {
     gap: 2rem;
     align-items: end;
     padding-block: 2.5rem 3rem;
-  }
-
-  .hero-facts {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .ledger li {

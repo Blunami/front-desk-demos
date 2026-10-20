@@ -90,8 +90,27 @@ body {
 }
 
 @media (max-width: 767px) {
+  html {
+    scroll-padding-bottom: calc(var(--sticky-h) + 1rem);
+  }
+
   body {
     padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom));
+  }
+
+  .btn,
+  button,
+  input,
+  select,
+  textarea,
+  .field,
+  .confirmation,
+  .hero-art {
+    scroll-margin-bottom: calc(var(--sticky-h) + 1rem);
+  }
+
+  .hero-art {
+    margin-top: 4.5rem;
   }
 }
 
