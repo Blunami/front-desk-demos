@@ -24,22 +24,24 @@ Open `http://localhost:8080/`, `http://localhost:8080/hvac/`, and `http://localh
 
 ## Make a mockup in 5 minutes
 
-Mockups are private concept previews. They are not linked from the landing page. Each page sends `noindex,nofollow`. `robots.txt` disallows `/mockups/` and `/front-desk-demos/mockups/` (GitHub project sites apply robots rules from the domain root).
+This repository keeps the public reference only: `template/`, `tools/build-mockup.mjs`, and `mockups/_example/config.json`. Real-lead mockups are built in the private repo [Blunami/front-desk-mockups](https://github.com/Blunami/front-desk-mockups) and published on Netlify. Never commit a real business name, phone, photo, or generated page to this repository.
 
-1. Copy the example and name the folder with a short slug:
+`robots.txt` still disallows `/mockups/` and `/front-desk-demos/mockups/`. Do not link a mockup from `index.html`.
+
+1. In the private repo, copy the example:
    ```bash
    mkdir -p mockups/your-lead
    cp mockups/_example/config.json mockups/your-lead/config.json
    ```
-2. Edit the copy. Set `slug` (for example `peace-of-mind-hvac`), `business_name`, `category` (`hvac`, `plumbing`, `salon`, `barber`, or `generic`), `phone`, `city`, `service_area`, and `hours`. Leave `preview_suffix` empty. Put logo or photo files in that same folder and refer to them by file name. Do not paste `http` image links; the generator ignores those so the page does not hotlink.
+2. Fill it from the lead’s public info. Set `slug` (for example `example-hvac`), `business_name`, `category` (`hvac`, `plumbing`, `salon`, `barber`, or `generic`), `phone`, `city`, `service_area`, and `hours`. Leave `preview_suffix` empty. Put logo or photo files in that same folder and refer to them by file name. Do not paste `http` image links; the generator ignores those so the page does not hotlink.
 3. Build:
    ```bash
    node tools/build-mockup.mjs mockups/your-lead/config.json
    ```
-4. The script adds a 4-character suffix, writes `mockups/<slug>-<suffix>/index.html`, and prints the preview path. Commit and push that folder.
-5. Open `https://blunami.github.io/front-desk-demos/mockups/<slug>-<suffix>/`.
+4. The script adds a 4-character suffix and writes `mockups/<slug>-<suffix>/index.html`. Commit that folder in the private repo only.
+5. Preview it on the private Netlify site.
 
-Run the same command again on `mockups/<slug>-<suffix>/config.json` to regenerate without a new suffix. Category defaults live in `template/presets.json`. The after-hours button is still `#after-hours-assistant`; the stub is `openAfterHoursStub()` in `template/mockup.js`.
+Run the same command again on `mockups/<slug>-<suffix>/config.json` to regenerate without a new suffix. Category defaults live in `template/presets.json`. A blank `tagline` uses the category headline, with `{city}` filled from the config. The page reads as that business’s own site. The only line that names Local Digital Front Desk is the top ribbon. The after-hours button is still `#after-hours-assistant`; the stub is `openAfterHoursStub()` in `template/mockup.js`.
 
 ## Swap in a real business
 

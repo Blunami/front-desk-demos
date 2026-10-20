@@ -221,15 +221,15 @@ export function renderMockup(model) {
     ? `<img class="logo" src="${esc(model.logo)}" alt="">`
     : `<span class="monogram" aria-hidden="true">${esc(model.initials)}</span>`;
   const art = model.photo
-    ? `<img class="hero-photo" src="${esc(model.photo)}" alt="Photo supplied for the ${esc(model.businessName)} concept preview.">`
+    ? `<img class="hero-photo" src="${esc(model.photo)}" alt="">`
     : `<p class="art-initials" aria-hidden="true">${esc(model.initials)}</p>${artMarkup(model.category)}`;
   const requestLabel = model.form === "booking" ? "Request a booking" : "Request a quote";
   const requestNav = model.form === "booking" ? "Book" : "Quote";
   const safety = model.safety ? `<p class="safety">${esc(model.safety)}</p>` : "";
   const note = model.websiteNote ? `<p class="website-note">${esc(model.websiteNote)}</p>` : "";
   const whenLine = model.form === "booking"
-    ? `A live desk would confirm <span data-confirm-service></span> for <span data-confirm-when></span>.`
-    : `A live desk would follow up about <span data-confirm-service></span> (<span data-confirm-when></span>).`;
+    ? `You asked for <span data-confirm-service></span> on <span data-confirm-when></span>.`
+    : `You asked about <span data-confirm-service></span> (<span data-confirm-when></span>).`;
   const fonts = model.theme === "care"
     ? `<link rel="preload" href="../../assets/fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../../assets/fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin>`
@@ -243,8 +243,8 @@ export function renderMockup(model) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${esc(model.businessName)} — concept preview</title>
-  <meta name="description" content="Concept preview prepared for ${esc(model.businessName)} by Local Digital Front Desk. Not a live site.">
+  <title>${esc(model.businessName)}</title>
+  <meta name="description" content="${esc(model.headline)}">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="${esc(model.colors.primary)}">
   <link rel="icon" href="data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="${model.colors.primary}"/><text x="16" y="21" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="${model.colors.onPrimary}">${model.initials}</text></svg>`)}">
@@ -299,13 +299,13 @@ export function renderMockup(model) {
       <div class="wrap after-layout">
         <div>
           <p class="kicker">After hours</p>
-          <h2 id="after-title">The desk can stay on the line after close.</h2>
-          <p class="section-intro">This button is the hook for an after-hours voice assistant. Nothing is connected on this preview.</p>
+          <h2 id="after-title">Call anytime. After hours, we'll take your message.</h2>
+          <p class="section-intro">When we are closed, call and leave what you need. We follow up when we open.</p>
           ${safety}
         </div>
         <!--
           TODO(elevenlabs): Wire the after-hours voice agent to this button.
-          Set data-agent-id, then change openAfterHoursStub() in template/mockup.js.
+          Set data-agent-id, then start the session from the page script instead of the dialog.
         -->
         <button
           type="button"
@@ -316,15 +316,15 @@ export function renderMockup(model) {
           data-agent-id=""
           aria-haspopup="dialog"
           aria-controls="after-hours-dialog"
-        >Call our after-hours assistant</button>
+        >Call after hours</button>
       </div>
     </section>
 
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <p class="kicker">Services</p>
-        <h2 id="services-title">What the desk can book or quote.</h2>
-        <p class="section-intro">Sample service list for this concept preview. Confirm the names and prices with the shop before anything goes live.</p>
+        <h2 id="services-title">${model.form === "booking" ? "What you can book" : "What we quote"}</h2>
+        <p class="section-intro">${model.form === "booking" ? "Choose a service and request a time." : "Choose a service and tell us what is going on. We quote the job before we start."}</p>
         <ul class="services">${serviceItems(model.services)}</ul>
       </div>
     </section>
@@ -332,12 +332,12 @@ export function renderMockup(model) {
     <section class="section" id="reviews" aria-labelledby="reviews-title">
       <div class="wrap">
         <p class="kicker">Reviews</p>
-        <h2 id="reviews-title">Sample review slots.</h2>
-        <p class="sample-banner">Placeholder reviews. Written for this preview. Not from real customers.</p>
+        <h2 id="reviews-title">What customers say</h2>
+        <p class="sample-banner">Sample reviews. These are not from real customers.</p>
         <ul class="reviews">
-          <li class="review"><p class="sample-tag">Sample review</p><p>Placeholder. Replace this with a review the business actually received, and only with permission.</p></li>
-          <li class="review"><p class="sample-tag">Sample review</p><p>Placeholder. A live page would name a real customer. This one does not.</p></li>
-          <li class="review"><p class="sample-tag">Sample review</p><p>Placeholder. This sentence is not a review of ${esc(model.businessName)}.</p></li>
+          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. A real quote belongs here after a customer gives permission.</p></li>
+          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. This card does not name a real customer.</p></li>
+          <li class="review"><p class="sample-tag">Sample review</p><p>Sample only. This sentence is not a review of ${esc(model.businessName)}.</p></li>
         </ul>
       </div>
     </section>
@@ -346,17 +346,17 @@ export function renderMockup(model) {
       <div class="wrap visit-grid">
         <div>
           <p class="kicker">Hours</p>
-          <h2 id="hours-title">When people answer.</h2>
+          <h2 id="hours-title">When we are open</h2>
           <p class="status" id="shop-status" role="status">Hours below are ${esc(model.timezone === "America/Denver" ? "Mountain Time" : model.timezone.replaceAll("_", " "))}.</p>
           <table class="hours">
-            <caption>Hours listed for this concept preview</caption>
+            <caption>Weekly hours</caption>
             <tbody>${hoursRows(model.hours)}</tbody>
           </table>
         </div>
         <div>
           <h3>Service area</h3>
           <p class="address"><strong>${esc(model.businessName)}</strong><br>${esc(model.serviceArea)}<br>${esc(model.city)}</p>
-          <p class="fine">No street address is shown. This preview uses the service area only.</p>
+          <p class="fine">We come to you. The service area is listed here, with no street address.</p>
           <div class="map-placeholder">
             <svg viewBox="0 0 640 320" aria-hidden="true">
               <rect width="640" height="320" fill="#f3eee4"/>
@@ -378,7 +378,7 @@ export function renderMockup(model) {
       <div class="wrap">
         <p class="kicker">${model.form === "booking" ? "Booking" : "Quote"}</p>
         <h2 id="request-title">${requestLabel}</h2>
-        <p class="section-intro">The form checks what you typed and then confirms on this page. It does not email, text, or store a lead.</p>
+        <p class="section-intro">Tell us what you need. You will see a confirmation on this page. Nothing is emailed or saved.</p>
         <div class="sheet">
           <form data-request-form="${model.form}" action="#" method="post" novalidate aria-labelledby="request-title">
             <p class="form-errors" role="alert" hidden></p>
@@ -405,7 +405,7 @@ export function renderMockup(model) {
             </div>
           </form>
           <div class="confirmation" data-confirmation tabindex="-1" hidden>
-            <h3>Noted — on this screen only.</h3>
+            <h3>Got it — on this screen only.</h3>
             <p>Thanks, <strong data-confirm-name></strong>. Nothing was sent. ${whenLine}</p>
             <button class="btn btn-solid" type="button" data-reset-form>Start another request</button>
           </div>
@@ -415,7 +415,7 @@ export function renderMockup(model) {
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p class="concept">${esc(concept)}</p>
+      <p>${esc(model.businessName)} · ${esc(model.city)}</p>
       ${note}
     </div>
   </footer>
@@ -423,8 +423,8 @@ export function renderMockup(model) {
   <dialog id="after-hours-dialog" aria-labelledby="after-dialog-title">
     <div class="dialog-card">
       <h2 id="after-dialog-title">Coming soon</h2>
-      <p>The after-hours assistant is not connected yet. On a live front desk this button starts a voice agent.</p>
-      <p>This preview still cannot dispatch anyone.</p>
+      <p>After hours, we'll take your message. This line is not connected yet.</p>
+      <p>For an emergency, use the phone number on this page or call 911.</p>
       <button class="btn btn-solid" type="button" data-close-dialog>Close</button>
     </div>
   </dialog>
@@ -465,6 +465,7 @@ export function buildModel(config, presets) {
   const businessName = String(config.business_name || "").trim();
   const city = String(config.city || "").trim() || "Your city";
   const serviceArea = String(config.service_area || "").trim() || city;
+  const fillCity = (text) => String(text || "").replaceAll("{city}", city);
   const phone = String(config.phone || "").trim();
   return {
     businessName,
@@ -472,9 +473,9 @@ export function buildModel(config, presets) {
     theme: preset.theme,
     label: preset.label,
     form: preset.form,
-    headline: String(config.tagline || "").trim() || preset.headline,
-    lede: preset.lede,
-    safety: preset.safety,
+    headline: fillCity(String(config.tagline || "").trim() || preset.headline),
+    lede: fillCity(preset.lede),
+    safety: fillCity(preset.safety),
     services,
     hours,
     schedule,
