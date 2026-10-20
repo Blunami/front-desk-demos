@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /mockups/
+Disallow: /front-desk-demos/mockups/

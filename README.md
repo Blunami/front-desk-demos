@@ -22,6 +22,25 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080/`, `http://localhost:8080/hvac/`, and `http://localhost:8080/salon/`. Do not open the HTML files directly from disk if you want the font paths and directory links to match GitHub Pages.
 
+## Make a mockup in 5 minutes
+
+Mockups are private concept previews. They are not linked from the landing page. Each page sends `noindex,nofollow`. `robots.txt` disallows `/mockups/` and `/front-desk-demos/mockups/` (GitHub project sites apply robots rules from the domain root).
+
+1. Copy the example and name the folder with a short slug:
+   ```bash
+   mkdir -p mockups/your-lead
+   cp mockups/_example/config.json mockups/your-lead/config.json
+   ```
+2. Edit the copy. Set `slug` (for example `peace-of-mind-hvac`), `business_name`, `category` (`hvac`, `plumbing`, `salon`, `barber`, or `generic`), `phone`, `city`, `service_area`, and `hours`. Leave `preview_suffix` empty. Put logo or photo files in that same folder and refer to them by file name. Do not paste `http` image links; the generator ignores those so the page does not hotlink.
+3. Build:
+   ```bash
+   node tools/build-mockup.mjs mockups/your-lead/config.json
+   ```
+4. The script adds a 4-character suffix, writes `mockups/<slug>-<suffix>/index.html`, and prints the preview path. Commit and push that folder.
+5. Open `https://blunami.github.io/front-desk-demos/mockups/<slug>-<suffix>/`.
+
+Run the same command again on `mockups/<slug>-<suffix>/config.json` to regenerate without a new suffix. Category defaults live in `template/presets.json`. The after-hours button is still `#after-hours-assistant`; the stub is `openAfterHoursStub()` in `template/mockup.js`.
+
 ## Swap in a real business
 
 Copy `hvac/` or `salon/` and edit that copy. Search the folder for the current fiction and replace it in one pass.

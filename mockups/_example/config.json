@@ -1,0 +1,45 @@
+{
+  "_notes": {
+    "slug": "Short public name, lowercase, hyphens. Example: peace-of-mind-hvac. Do not add the random suffix yourself.",
+    "preview_suffix": "Leave empty. The generator assigns 4 characters, stores them here, and reuses them when you rebuild.",
+    "business_name": "Required. Header, ribbon, and footer.",
+    "category": "hvac, plumbing, salon, or barber. Anything else becomes generic. Sets default services, quote vs booking form, and art.",
+    "tagline": "Optional hero headline. If blank, the category headline is used.",
+    "services": "Optional list of {name, detail, price}. If omitted or empty, the category defaults are used. price may be an empty string.",
+    "hours": "mon, tue, wed, thu, fri, sat, sun. A range such as 8:00 AM–4:00 PM, or Closed.",
+    "phone": "Shown on the click-to-call links. Ten digits become tel:+1….",
+    "city": "Shown in the hero.",
+    "service_area": "Used instead of a street address. The map is a drawn placeholder, not an embed.",
+    "colors": "primary and accent as #hex. The generator picks text color on those fills for contrast.",
+    "logo_url": "Optional file name in this folder, such as logo.png. http links are ignored.",
+    "photo_urls": "Optional list of file names in this folder. If empty, the page uses a monogram and SVG art.",
+    "website_note": "One short line under the concept-preview footer.",
+    "timezone": "Optional. Defaults to America/Denver for the open/closed line."
+  },
+  "slug": "example-business",
+  "preview_suffix": "",
+  "business_name": "Example Business Name",
+  "category": "hvac",
+  "tagline": "",
+  "services": [],
+  "hours": {
+    "mon": "8:00 AM–4:00 PM",
+    "tue": "8:00 AM–4:00 PM",
+    "wed": "8:00 AM–4:00 PM",
+    "thu": "8:00 AM–4:00 PM",
+    "fri": "8:00 AM–4:00 PM",
+    "sat": "Closed",
+    "sun": "Closed"
+  },
+  "phone": "(719) 555-0100",
+  "city": "Colorado Springs",
+  "service_area": "Colorado Springs & surrounding areas",
+  "colors": {
+    "primary": "#1c3d36",
+    "accent": "#e2a23a"
+  },
+  "logo_url": "",
+  "photo_urls": [],
+  "website_note": "Replace this with a one-line note about what the preview is based on.",
+  "timezone": "America/Denver"
+}

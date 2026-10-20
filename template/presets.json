@@ -1,0 +1,84 @@
+{
+  "hvac": {
+    "theme": "trade",
+    "label": "Heating and air",
+    "form": "quote",
+    "headline": "A front desk for heating and cooling calls.",
+    "lede": "The shop can answer, take a quote request, and leave an after-hours assistant on the line.",
+    "safety": "This preview cannot send a technician. A gas odor or a carbon-monoxide alarm is a reason to leave and call 911.",
+    "colors": { "primary": "#1c3d36", "accent": "#e2a23a" },
+    "services": [
+      { "name": "Furnace repair", "detail": "No-heat calls, ignition, limits, and heat exchangers.", "price": "Quoted on site" },
+      { "name": "Cooling repair", "detail": "When a room will not catch up on a hot afternoon.", "price": "Quoted on site" },
+      { "name": "Seasonal tune-up", "detail": "Heating or cooling, one system per visit.", "price": "Ask the desk" },
+      { "name": "System replacement", "detail": "Equipment sized for the house, including altitude.", "price": "Written quote" },
+      { "name": "Thermostats", "detail": "Simple controls and programmable ones.", "price": "Ask the desk" },
+      { "name": "Indoor air", "detail": "Filters and a look at dry winter air.", "price": "Ask the desk" }
+    ]
+  },
+  "plumbing": {
+    "theme": "trade",
+    "label": "Plumbing",
+    "form": "quote",
+    "headline": "A front desk for the calls that cannot wait.",
+    "lede": "Leaks, water heaters, and drains get a person by day and an assistant after hours.",
+    "safety": "This preview cannot send a plumber. If sewage is backing up into the house, or you smell gas, leave and call for emergency help.",
+    "colors": { "primary": "#16324a", "accent": "#d28a3a" },
+    "services": [
+      { "name": "Drain cleaning", "detail": "Slow sinks, tubs, and main-line stoppages.", "price": "Quoted on site" },
+      { "name": "Leak repair", "detail": "Supply lines, valves, and the drip that stains a ceiling.", "price": "Quoted on site" },
+      { "name": "Water heaters", "detail": "No hot water, leaks at the tank, and replacements.", "price": "Written quote" },
+      { "name": "Fixtures", "detail": "Faucets, toilets, and disposals.", "price": "Ask the desk" },
+      { "name": "Sewer line", "detail": "Backups and the camera look that should come before a dig.", "price": "Quoted on site" },
+      { "name": "Shutoff help", "detail": "Finding the valve and stopping the water.", "price": "Ask the desk" }
+    ]
+  },
+  "salon": {
+    "theme": "care",
+    "label": "Salon",
+    "form": "booking",
+    "headline": "A chair with a desk that answers.",
+    "lede": "Guests can see the menu, request a time, and reach the salon after the room locks.",
+    "safety": "",
+    "colors": { "primary": "#3a2430", "accent": "#e7a27a" },
+    "services": [
+      { "name": "Cut and style", "detail": "A wash, a cut, and a finish that can take the wind.", "price": "See menu" },
+      { "name": "Blowout", "detail": "Smooth, for an evening or a photo.", "price": "See menu" },
+      { "name": "Root gloss", "detail": "Regrowth and shine, about an hour in the chair.", "price": "See menu" },
+      { "name": "All-over color", "detail": "Single process. Corrections are quoted in person.", "price": "From the desk" },
+      { "name": "Lived-in light", "detail": "Dimension placed for real daylight.", "price": "From the desk" },
+      { "name": "Toner refresh", "detail": "When brass shows up early.", "price": "See menu" }
+    ]
+  },
+  "barber": {
+    "theme": "care",
+    "label": "Barber",
+    "form": "booking",
+    "headline": "A chair, a time, and a desk that picks up.",
+    "lede": "Cuts and shaves stay on a clear menu. The phone still answers after the lights go down.",
+    "safety": "",
+    "colors": { "primary": "#2c261f", "accent": "#c6a15a" },
+    "services": [
+      { "name": "Haircut", "detail": "Scissor or clipper, finished with a neck clean.", "price": "See menu" },
+      { "name": "Beard trim", "detail": "Shape, length, and a clean cheek line.", "price": "See menu" },
+      { "name": "Cut and beard", "detail": "Both, in one sit.", "price": "See menu" },
+      { "name": "Hot towel shave", "detail": "A straight-razor shave when the schedule allows.", "price": "See menu" },
+      { "name": "Kids cut", "detail": "A shorter visit for a younger head.", "price": "See menu" },
+      { "name": "Line-up", "detail": "Edges only, between full cuts.", "price": "See menu" }
+    ]
+  },
+  "generic": {
+    "theme": "general",
+    "label": "Local service",
+    "form": "quote",
+    "headline": "A front desk for the work you already do.",
+    "lede": "Callers get the hours, the services, and a request form that confirms on screen.",
+    "safety": "",
+    "colors": { "primary": "#243028", "accent": "#d4893a" },
+    "services": [
+      { "name": "Service call", "detail": "A visit to see the job in person.", "price": "Ask the desk" },
+      { "name": "Estimate", "detail": "A written range after the look.", "price": "No charge to ask" },
+      { "name": "Follow-up", "detail": "The return visit once the first job is done.", "price": "Ask the desk" }
+    ]
+  }
+}
