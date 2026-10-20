@@ -1,0 +1,270 @@
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/fraunces-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-sans-3-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/source-sans-3-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/cormorant-garamond-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/outfit-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/outfit-500.woff2") format("woff2");
+}
+
+:root {
+  --ink: #1c1712;
+  --paper: #f4eee4;
+  --muted: #d9cfc2;
+  --ochre: #e0a24a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 5;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.6rem 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+.intro {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.brand-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+}
+
+.brand-mark {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.brand-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+h1 {
+  margin: 0;
+  max-width: 16ch;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 7vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.lede {
+  max-width: 42rem;
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.deck {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 26rem;
+  padding: 1.5rem 1.25rem 1.4rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.demo-card-hvac {
+  background: #241f1b;
+  color: #f4eee4;
+}
+
+.demo-card-salon {
+  background: #fbf6f1;
+  color: #24161c;
+}
+
+.kicker {
+  margin: 0 0 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.demo-card-hvac .kicker {
+  color: #e0a24a;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.demo-card-salon .kicker {
+  color: #8a4b2c;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+}
+
+.demo-card h2 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.demo-card-hvac h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  max-width: 10ch;
+}
+
+.demo-card-salon h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
+  max-width: 12ch;
+}
+
+.demo-card p {
+  margin: 0.9rem 0 0;
+  max-width: 36ch;
+  font-size: 1.05rem;
+}
+
+.demo-card-salon p {
+  font-family: "Outfit", sans-serif;
+}
+
+.card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.card-cta {
+  font-weight: 600;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.1rem;
+}
+
+.mini-art {
+  width: 7.5rem;
+  height: auto;
+  flex: none;
+}
+
+.site-footer {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: 46rem;
+}
+
+@media (min-width: 800px) {
+  .intro {
+    padding-top: 2rem;
+  }
+
+  .deck {
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 22rem);
+  }
+
+  .demo-card {
+    min-height: 32rem;
+    padding: 2rem 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
