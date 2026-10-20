@@ -1,6 +1,6 @@
 {
   "_notes": {
-    "slug": "Short public name, lowercase, hyphens. Example: peace-of-mind-hvac. Do not add the random suffix yourself.",
+    "slug": "Short public name, lowercase, hyphens. Example: example-hvac. Do not add the random suffix yourself.",
     "preview_suffix": "Leave empty. The generator assigns 4 characters, stores them here, and reuses them when you rebuild.",
     "business_name": "Required. Header, ribbon, and footer.",
     "category": "hvac, plumbing, salon, or barber. Anything else becomes generic. Sets default services, quote vs booking form, and art.",

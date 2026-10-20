@@ -67,7 +67,7 @@ if (!/^[a-z0-9]{4}$/.test(suffix)) {
 }
 const base = slugify(raw.slug || path.basename(path.dirname(inputPath)) || businessName);
 if (!base) {
-  console.error("Could not make a slug. Set config.slug to a short name like peace-of-mind-hvac.");
+  console.error("Could not make a slug. Set config.slug to a short name like example-hvac.");
   process.exit(1);
 }
 const publicSlug = `${base}-${suffix}`;
@@ -108,4 +108,4 @@ writeFileSync(path.join(outDir, "config.json"), JSON.stringify(saved, null, 2) +
 const previewPath = `/mockups/${publicSlug}/`;
 console.log("Wrote " + path.relative(root, path.join(outDir, "index.html")));
 console.log("Preview path: " + previewPath);
-console.log("Preview URL: https://blunami.github.io/front-desk-demos" + previewPath);
+console.log("Publish real-lead pages from the private repo Blunami/front-desk-mockups on Netlify. Do not commit them to front-desk-demos.");
