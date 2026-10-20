@@ -1,0 +1,30 @@
+Impeccable detect — AFTER redesign
+Engine: impeccable skill v4.7.0, engine version in .cursor/skills/impeccable/scripts/VERSION (0.1.16 at install).
+Each block is the raw stderr/stdout of `impeccable detect <file>`. Exit 0 and an empty body means no primary findings and no advisories.
+
+Per-page primary finding counts:
+- landing (index.html): 0
+- hvac (hvac/index.html): 0
+- salon (salon/index.html): 0
+- mockup example (mockups/example-business-aejp/index.html): 0
+
+Before counts were 1, 11, 6, and 8 primary findings. See design/impeccable-before.txt.
+
+Raw detector output follows.
+================================================================
+
+Engine: skill v4.7.0, scripts/VERSION 0.1.16
+Command per page: impeccable detect <file>
+
+===== landing (index.html) =====
+exit:0
+
+===== hvac (hvac/index.html) =====
+exit:0
+
+===== salon (salon/index.html) =====
+exit:0
+
+===== mockup-example (mockups/example-business-aejp/index.html) =====
+exit:0
+

@@ -6,10 +6,10 @@
   <title>The Apricot Chair | Fictional Colorado Springs salon demo</title>
   <meta name="description" content="Demo site for The Apricot Chair, a fictional Colorado Springs color salon. Sample menu, placeholder reviews, and a front-desk booking request.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#fbf6f1">
+  <meta name="theme-color" content="#d5e3e6">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fbf6f1'/%3E%3Ccircle cx='16' cy='14' r='6' fill='%23e7a27a'/%3E%3Crect x='14' y='18' width='4' height='8' fill='%2324161c'/%3E%3C/svg%3E">
-  <link rel="preload" href="../assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/besley-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/karla-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,47 +28,22 @@
   </header>
 
   <main id="main">
-    <div class="wrap">
-      <p class="mast"><span>Colorado Springs · Demo issue</span><span>Color room · Fictional</span></p>
-      <div class="rule" aria-hidden="true"></div>
-    </div>
-
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div>
           <h1 id="hero-title">Color that can take a high-desert winter.</h1>
-          <p class="lede">The Apricot Chair is not a real salon. This is a front-desk demo: a printed menu, a booking request that confirms here, and an after-hours assistant waiting on a clean hook.</p>
+          <p class="lede">Cuts and color for high-desert winters. Request a time and we confirm it with you. The Apricot Chair is a fictional salon.</p>
           <div class="hero-actions">
             <a class="btn btn-fill" href="#book">Request a chair</a>
             <a class="btn btn-line" href="tel:+17195550186">Call (719) 555-0186</a>
           </div>
         </div>
-        <div class="hero-art">
-          <svg viewBox="0 0 480 560" width="480" height="560" role="img" aria-label="Line drawing of a salon chair and an apricot branch.">
-            <rect x="118" y="36" width="150" height="250" rx="18" fill="none" stroke="#24161c" stroke-width="3"/>
-            <path d="M150 78 H236 M150 118 H236 M150 158 H236" fill="none" stroke="#24161c" stroke-width="1.5" opacity="0.55"/>
-            <rect x="78" y="286" width="250" height="36" rx="6" fill="none" stroke="#24161c" stroke-width="3"/>
-            <path d="M118 286 V250 H96" fill="none" stroke="#24161c" stroke-width="3"/>
-            <path d="M288 286 V250 H310" fill="none" stroke="#24161c" stroke-width="3"/>
-            <path d="M203 322 V430" fill="none" stroke="#24161c" stroke-width="3"/>
-            <path d="M203 430 L120 500 M203 430 L286 500 M203 430 V512" fill="none" stroke="#24161c" stroke-width="3"/>
-            <circle cx="120" cy="500" r="8" fill="none" stroke="#24161c" stroke-width="3"/>
-            <circle cx="286" cy="500" r="8" fill="none" stroke="#24161c" stroke-width="3"/>
-            <circle cx="203" cy="512" r="8" fill="none" stroke="#24161c" stroke-width="3"/>
-            <path d="M330 210 C390 180 410 120 400 48" fill="none" stroke="#8a4b2c" stroke-width="2.5"/>
-            <path d="M378 150 C400 140 412 150 408 168" fill="none" stroke="#8a4b2c" stroke-width="2"/>
-            <circle cx="392" cy="70" r="16" fill="#e7a27a"/>
-            <circle cx="424" cy="112" r="11" fill="#e7a27a"/>
-            <circle cx="360" cy="126" r="9" fill="#e7a27a"/>
-          </svg>
-        </div>
-      </div>
+</div>
     </section>
 
     <section class="section section-follow" id="light" aria-labelledby="light-title">
       <div class="wrap">
-        <p class="kicker">Light we plan for</p>
-        <h2 id="light-title">Four colors, no stock photos.</h2>
+<h2 id="light-title">Four colors, no stock photos.</h2>
         <p class="section-intro">Sun at this altitude fades a formula fast. These swatches are the room’s shorthand, drawn in CSS, not pictures of clients.</p>
         <ul class="swatches">
           <li>
@@ -97,8 +72,7 @@
 
     <section class="section" id="menu" aria-labelledby="menu-title">
       <div class="wrap">
-        <p class="kicker">Menu</p>
-        <h2 id="menu-title">Services, said plainly.</h2>
+<h2 id="menu-title">Services, said plainly.</h2>
         <ol class="menu">
           <li>
             <span class="menu-name">Cut &amp; style</span>
@@ -150,9 +124,8 @@
     <section class="section after-hours" id="after-hours" aria-labelledby="after-title">
       <div class="wrap after-hours-layout">
         <div>
-          <p class="kicker">After hours</p>
-          <h2 id="after-title">The room locks. The desk can stay on the line.</h2>
-          <p class="section-intro">Tuesday through Saturday the phone is a person. After close, a voice assistant can take a booking request and the stylist’s name. The button is wired as a stub so that agent can be dropped in later.</p>
+<h2 id="after-title">Call anytime. After close, we will take your message.</h2>
+          <p class="section-intro">Tuesday through Saturday a person answers. After close, use this button. Nothing is connected yet.</p>
           <p class="caution">This demo does not hold a chair. No message leaves your browser.</p>
         </div>
         <!--
@@ -170,14 +143,13 @@
           data-agent-id=""
           aria-haspopup="dialog"
           aria-controls="after-hours-dialog"
-        >Call our after-hours assistant</button>
+        >Call after hours</button>
       </div>
     </section>
 
     <section class="section" id="reviews" aria-labelledby="reviews-title">
       <div class="wrap">
-        <p class="kicker">Sample reviews</p>
-        <h2 id="reviews-title">What guests might say.</h2>
+<h2 id="reviews-title">What guests might say.</h2>
         <p class="sample-banner">Placeholder reviews. Written for this demo. Not from real guests.</p>
         <ul class="reviews">
           <li>
@@ -208,8 +180,7 @@
     <section class="section" id="visit" aria-labelledby="visit-title">
       <div class="wrap visit-grid">
         <div>
-          <p class="kicker">Hours</p>
-          <h2 id="visit-title">When the chairs are open.</h2>
+<h2 id="visit-title">When the chairs are open.</h2>
           <p class="status" id="shop-status" role="status">Hours below are America/Denver.</p>
           <table class="hours">
             <caption>Desk hours for this fictional salon</caption>
@@ -252,9 +223,8 @@
     <section class="section" id="book" aria-labelledby="book-title">
       <div class="wrap book-grid">
         <div>
-          <p class="kicker">Booking</p>
-          <h2 id="book-title">Request a chair.</h2>
-          <p class="section-intro">Tell us the service and a day. The page will confirm what you typed. A real desk would answer by text. This one keeps the request on your machine.</p>
+<h2 id="book-title">Request a chair.</h2>
+          <p class="section-intro">Tell us the service and a day. The page will confirm what you typed. Nothing is emailed or saved from this page.</p>
         </div>
         <div class="book">
           <form id="booking-form" action="#" method="post" novalidate aria-labelledby="book-title">
@@ -323,7 +293,7 @@
           </form>
           <div class="confirmation" id="booking-confirmation" tabindex="-1" hidden>
             <h3>You’re on the book — almost.</h3>
-            <p>Thanks, <strong data-confirm-name></strong>. This demo saved nothing and sent nothing. A live desk would confirm <span data-confirm-service></span> for <span data-confirm-when></span>.</p>
+            <p>Thanks, <strong data-confirm-name></strong>. Nothing was sent. You asked for <span data-confirm-service></span> for <span data-confirm-when></span>.</p>
             <button class="btn btn-fill" type="button" id="booking-reset">Start another request</button>
           </div>
         </div>
@@ -346,7 +316,7 @@
   <dialog id="after-hours-dialog" aria-labelledby="after-hours-title">
     <div class="dialog-card">
       <h2 id="after-hours-title">Coming soon</h2>
-      <p>The after-hours assistant is not connected yet. On a live front desk this button starts a voice agent that can take a booking request after the room locks.</p>
+      <p>After hours, we will take your message. This line is not connected yet.</p>
       <p>Nothing is on the calendar from this demo.</p>
       <button class="btn btn-fill" type="button" data-close-dialog>Close</button>
     </div>

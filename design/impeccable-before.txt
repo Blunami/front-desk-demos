@@ -1,0 +1,111 @@
+Impeccable detect — BEFORE redesign
+Engine: impeccable CLI via .cursor/skills/impeccable/scripts/impeccable (skill v4.7.0, engine scripts/VERSION 0.1.16)
+Command: impeccable detect <target>   (human-readable findings on stderr; primary findings change the exit code)
+Targets are the pages as they were on main before this redesign.
+
+Per-page primary finding counts (advisory notes are listed in the raw output and are not failures):
+- landing (index.html): 1
+- hvac (hvac/index.html): 11  (plus 6 advisory)
+- salon (salon/index.html): 6
+- mockup example (mockups/example-business-aejp/index.html, generated from mockups/_example/config.json): 8
+
+Raw detector output follows.
+================================================================
+===== landing =====
+
+/workspace/index.html
+  [overused-font] Primary font: fraunces
+    → Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.
+
+1 anti-pattern found.
+exit:2
+
+===== hvac =====
+
+/workspace/hvac/index.html
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Fictional demo · Heating & air · West Co" above h1 "Heat that holds when weather comes off the Peak."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, or run it as a navigation breadcrumb instead.
+  [cramped-padding] <section> "hero": children flush against bg on top/right/left (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [wide-tracking] letter-spacing: 0.06em on body text
+    → Letter spacing above 0.05em on body text disrupts natural character groupings and slows reading. Reserve wide tracking for short uppercase labels only.
+  [cramped-padding] <section> "section": children flush against bg on right/left (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [cramped-padding] <svg>: children flush against bg on all sides (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [overused-font] Primary font: fraunces
+    → Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.
+  [cream-palette] cream/beige page background rgb(244, 238, 228)
+    → A warm cream or beige page background has become the default "tasteful" AI surface, reached for by reflex. Choose a background that comes from a deliberate palette, not the safe warm off-white.
+
+11 anti-patterns found.
+
+── Advisory (not counted as failures) ──
+
+/workspace/hvac/index.html
+  [numbered-section-labels] tiny numbered label "01 — Services" beside h2 "What we come out for" (5 on page)
+    → Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.
+  [numbered-section-labels] tiny numbered label "02 — A visit" beside h2 "How the desk handles a call" (5 on page)
+    → Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.
+  [numbered-section-labels] tiny numbered label "03 — Reviews" beside h2 "Sample reviews" (5 on page)
+    → Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.
+  [numbered-section-labels] tiny numbered label "04 — Hours" beside h2 "Shop hours" (5 on page)
+    → Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.
+  [numbered-section-labels] tiny numbered label "05 — Quote" beside h2 "Request a quote" (5 on page)
+    → Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.
+  [shape-assembled-illustration] inline <svg> scene: 8 primitive shapes, ~640x700px, 7 fill colors
+    → A large inline SVG that builds a pictorial scene from a pile of primitive shapes reads as placeholder clip art, not illustration. Icons, logos, and data graphics are fine at their scale; a hero-sized visual deserves real artwork, a photograph, or a deliberately drawn graphic.
+
+6 advisory notes. Suppress with --no-advisory.
+exit:2
+
+===== salon =====
+
+/workspace/salon/index.html
+  [cramped-padding] <section> "section": children flush against bg on right/left (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [tight-leading] line-height 1.08x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.08x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.08x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [cramped-padding] <svg>: children flush against bg on all sides (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [cream-palette] cream/beige page background rgb(251, 246, 241)
+    → A warm cream or beige page background has become the default "tasteful" AI surface, reached for by reflex. Choose a background that comes from a deliberate palette, not the safe warm off-white.
+
+6 anti-patterns found.
+exit:2
+
+===== mockup-example =====
+
+/workspace/mockups/example-business-aejp/index.html
+  [low-contrast] 1.7:1 (need 4.5:1) — text #45605a on #1c3d36
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Heating and air · Colorado Springs" above h1 "Fast, honest heating and cooling repair in Colorado Springs."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, or run it as a navigation breadcrumb instead.
+  [cramped-padding] <section> "section": children flush against bg on right/left (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [tight-leading] line-height 1.25x (need >=1.3)
+    → Line height below 1.3x the font size makes multi-line text hard to read. Use 1.5 to 1.7 for body text so lines have room to breathe.
+  [cramped-padding] <svg>: children flush against bg on all sides (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the space between the rendered text and the border box is too small for the font size, and (2) a wrapper whose children's text lands flush against a visible boundary (border, outline, or non-transparent background) with nothing to inset it. Add at least 8px (ideally 12–16px) of space inside bordered, outlined, or colored containers.
+  [cream-palette] cream/beige page background rgb(246, 243, 238)
+    → A warm cream or beige page background has become the default "tasteful" AI surface, reached for by reflex. Choose a background that comes from a deliberate palette, not the safe warm off-white.
+
+8 anti-patterns found.
+exit:2
+
