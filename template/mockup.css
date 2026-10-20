@@ -367,6 +367,9 @@ h2 {
 }
 
 .after-hours-btn {
+  align-self: start;
+  justify-self: start;
+  height: auto;
   width: min(100%, 22rem);
 }
 

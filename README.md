@@ -54,8 +54,8 @@ In `index.html` (the business page, not only the landing page):
 - Email text and `mailto:` href
 - Street address. The map is a drawn placeholder, not an embed — replace the SVG and the caption in `.map-placeholder` with the shop’s real map snippet when you are ready
 - Hours table, and the matching `HOURS` object in `main.js` (minutes from midnight, `null` if closed). The open/closed line uses `America/Denver`
-- Services, prices, and the sample reviews. Delete the “Placeholder reviews” banner only when the quotes are real
-- Hero and footer lines that say the business is fictional
+- Services, prices, and the sample reviews. Delete the “Sample reviews” banner only when the quotes are real
+- The footer line that says the business is fictional
 - Favicon and `<meta name="theme-color">` if the palette changes
 - Remove `<meta name="robots" content="noindex">` only if the live site should be indexed
 
