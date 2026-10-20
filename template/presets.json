@@ -21,7 +21,7 @@
     "label": "Plumbing",
     "form": "quote",
     "headline": "Fast plumbing help in {city}.",
-    "lede": "Leaks, water heaters, and slow drains. Call anytime — after hours we'll take your message.",
+    "lede": "Leaks, water heaters, and slow drains. Call anytime — after hours we’ll take your message.",
     "safety": "If sewage is backing into the house, or you smell gas, leave and call for emergency help.",
     "colors": { "primary": "#1a3148", "accent": "#f2c14e" },
     "services": [
@@ -38,7 +38,7 @@
     "label": "Salon",
     "form": "booking",
     "headline": "Cuts and color in {city}.",
-    "lede": "A clear menu and a time you can request. After we close, call and we'll take your message.",
+    "lede": "A clear menu and a time you can request. After we close, call and we’ll take your message.",
     "safety": "",
     "colors": { "primary": "#172226", "accent": "#9c3b45" },
     "services": [
@@ -72,7 +72,7 @@
     "label": "Local service",
     "form": "quote",
     "headline": "Local service in {city}.",
-    "lede": "See the work, the hours, and how to ask for a quote. Call anytime — after hours we'll take your message.",
+    "lede": "See the work, the hours, and how to ask for a quote. Call anytime — after hours we’ll take your message.",
     "safety": "",
     "colors": { "primary": "#1c2830", "accent": "#e0a15a" },
     "services": [

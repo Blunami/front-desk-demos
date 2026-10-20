@@ -22,6 +22,8 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080/`, `http://localhost:8080/hvac/`, and `http://localhost:8080/salon/`. Do not open the HTML files directly from disk if you want the font paths and directory links to match GitHub Pages.
 
+The required pipeline for every new mockup is in [docs/WORKFLOW.md](docs/WORKFLOW.md). `npm run check` runs the browser tests and refreshes `design/screenshots/`. It is a dev check only. GitHub Pages still serves the static files from the repository root, and `node_modules/` is not published.
+
 ## Make a mockup in 5 minutes
 
 This repository keeps the public reference only: `template/`, `tools/build-mockup.mjs`, and `mockups/_example/config.json`. Real-lead mockups are built in the private repo [Blunami/front-desk-mockups](https://github.com/Blunami/front-desk-mockups) and published on Netlify. Never commit a real business name, phone, photo, or generated page to this repository.

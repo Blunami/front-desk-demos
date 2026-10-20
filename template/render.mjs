@@ -164,13 +164,13 @@ function formFields(form, services) {
       <option value="">Choose a service</option>
       ${options(services)}
     </select>
-    <p class="field-error" id="req-service-error" hidden></p>
+    <p class="field-error" aria-live="polite" id="req-service-error" hidden></p>
   </div>`;
   const extra = form === "booking"
     ? `<div class="field">
         <label for="req-date">Preferred day</label>
         <input id="req-date" name="date" type="date" required data-date aria-describedby="req-date-error">
-        <p class="field-error" id="req-date-error" hidden></p>
+        <p class="field-error" aria-live="polite" id="req-date-error" hidden></p>
       </div>
       <div class="field">
         <label for="req-time">Time of day</label>
@@ -180,7 +180,7 @@ function formFields(form, services) {
           <option>Afternoon</option>
           <option>Evening</option>
         </select>
-        <p class="field-error" id="req-time-error" hidden></p>
+        <p class="field-error" aria-live="polite" id="req-time-error" hidden></p>
       </div>
       <div class="field span-2">
         <label for="req-notes">Notes <span class="optional">(optional)</span></label>
@@ -194,7 +194,7 @@ function formFields(form, services) {
           <option>Afternoon</option>
           <option>Next available</option>
         </select>
-        <p class="field-error" id="req-timing-error" hidden></p>
+        <p class="field-error" aria-live="polite" id="req-timing-error" hidden></p>
       </div>
       <div class="field span-2">
         <label for="req-address">Service address <span class="optional">(optional)</span></label>
@@ -225,7 +225,7 @@ export function renderMockup(model) {
     : (model.tel
       ? `<a class="phone-board" href="tel:${esc(model.tel)}">${esc(model.phone)}</a>`
       : `<p class="art-initials" aria-hidden="true">${esc(model.initials)}</p>`);
-  const requestLabel = model.form === "booking" ? "Request a booking" : "Request a quote";
+  const requestLabel = model.form === "booking" ? "Request a Booking" : "Request a Quote";
   const requestNav = model.form === "booking" ? "Book" : "Quote";
   const safety = model.safety ? `<p class="safety">${esc(model.safety)}</p>` : "";
   const note = model.websiteNote ? `<p class="website-note">${esc(model.websiteNote)}</p>` : "";
@@ -299,7 +299,7 @@ export function renderMockup(model) {
     <section class="section after-hours" id="after-hours" aria-labelledby="after-title">
       <div class="wrap after-layout">
         <div>
-          <h2 id="after-title">Call anytime. After hours, we'll take your message.</h2>
+          <h2 id="after-title">Call anytime. After hours, we’ll take your message.</h2>
           <p class="section-intro">When we are closed, call and leave what you need. We follow up when we open.</p>
           ${safety}
         </div>
@@ -316,7 +316,7 @@ export function renderMockup(model) {
           data-agent-id=""
           aria-haspopup="dialog"
           aria-controls="after-hours-dialog"
-        >Call after hours</button>
+        >Call After Hours</button>
       </div>
     </section>
 
@@ -380,17 +380,17 @@ export function renderMockup(model) {
               <div class="field">
                 <label for="req-name">Full name</label>
                 <input id="req-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="req-name-error">
-                <p class="field-error" id="req-name-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="req-name-error" hidden></p>
               </div>
               <div class="field">
                 <label for="req-phone">Phone</label>
                 <input id="req-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" aria-describedby="req-phone-error">
-                <p class="field-error" id="req-phone-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="req-phone-error" hidden></p>
               </div>
               <div class="field span-2">
                 <label for="req-email">Email</label>
-                <input id="req-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="120" aria-describedby="req-email-error">
-                <p class="field-error" id="req-email-error" hidden></p>
+                <input id="req-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required maxlength="120" aria-describedby="req-email-error">
+                <p class="field-error" aria-live="polite" id="req-email-error" hidden></p>
               </div>
               ${formFields(model.form, model.services)}
               <div class="field span-2">
@@ -401,7 +401,7 @@ export function renderMockup(model) {
           <div class="confirmation" data-confirmation tabindex="-1" hidden>
             <h3>Request noted.</h3>
             <p>Thanks, <strong data-confirm-name></strong>. Nothing was sent. ${whenLine}</p>
-            <button class="btn btn-solid" type="button" data-reset-form>Start another request</button>
+            <button class="btn btn-solid" type="button" data-reset-form>Start Another Request</button>
           </div>
         </div>
       </div>

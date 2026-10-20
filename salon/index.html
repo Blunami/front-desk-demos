@@ -34,7 +34,7 @@
           <h1 id="hero-title">Color that can take a high-desert winter.</h1>
           <p class="lede">Cuts and color for high-desert winters. Request a time and we confirm it with you before the chair is held.</p>
           <div class="hero-actions">
-            <a class="btn btn-fill" href="#book">Request a chair</a>
+            <a class="btn btn-fill" href="#book">Request a Chair</a>
             <a class="btn btn-line" href="tel:+17195550186">Call (719) 555-0186</a>
           </div>
         </div>
@@ -143,7 +143,7 @@
           data-agent-id=""
           aria-haspopup="dialog"
           aria-controls="after-hours-dialog"
-        >Call after hours</button>
+        >Call After Hours</button>
       </div>
     </section>
 
@@ -232,17 +232,17 @@
               <div class="field">
                 <label for="book-name">Full name</label>
                 <input id="book-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="book-name-error">
-                <p class="field-error" id="book-name-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="book-name-error" hidden></p>
               </div>
               <div class="field">
                 <label for="book-phone">Phone</label>
                 <input id="book-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" aria-describedby="book-phone-error">
-                <p class="field-error" id="book-phone-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="book-phone-error" hidden></p>
               </div>
               <div class="field span-2">
                 <label for="book-email">Email</label>
-                <input id="book-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="120" aria-describedby="book-email-error">
-                <p class="field-error" id="book-email-error" hidden></p>
+                <input id="book-email" name="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" required maxlength="120" aria-describedby="book-email-error">
+                <p class="field-error" aria-live="polite" id="book-email-error" hidden></p>
               </div>
               <div class="field">
                 <label for="book-service">Service</label>
@@ -256,7 +256,7 @@
                   <option>Toner refresh</option>
                   <option>Trim between colors</option>
                 </select>
-                <p class="field-error" id="book-service-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="book-service-error" hidden></p>
               </div>
               <div class="field">
                 <label for="book-stylist">Stylist <span class="optional">(optional)</span></label>
@@ -269,7 +269,7 @@
               <div class="field">
                 <label for="book-date">Preferred day</label>
                 <input id="book-date" name="date" type="date" required aria-describedby="book-date-error">
-                <p class="field-error" id="book-date-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="book-date-error" hidden></p>
               </div>
               <div class="field">
                 <label for="book-time">Time of day</label>
@@ -279,21 +279,21 @@
                   <option>Afternoon</option>
                   <option>Evening</option>
                 </select>
-                <p class="field-error" id="book-time-error" hidden></p>
+                <p class="field-error" aria-live="polite" id="book-time-error" hidden></p>
               </div>
               <div class="field span-2">
                 <label for="book-notes">Notes <span class="optional">(optional)</span></label>
                 <textarea id="book-notes" name="notes" maxlength="600"></textarea>
               </div>
               <div class="field span-2">
-                <button class="btn btn-fill" type="submit">Request this booking</button>
+                <button class="btn btn-fill" type="submit">Request This Booking</button>
               </div>
             </div>
           </form>
           <div class="confirmation" id="booking-confirmation" tabindex="-1" hidden>
             <h3>Request noted.</h3>
             <p>Thanks, <strong data-confirm-name></strong>. Nothing was sent. You asked for <span data-confirm-service></span> for <span data-confirm-when></span>.</p>
-            <button class="btn btn-fill" type="button" id="booking-reset">Start another request</button>
+            <button class="btn btn-fill" type="button" id="booking-reset">Start Another Request</button>
           </div>
         </div>
       </div>
@@ -308,7 +308,7 @@
   </footer>
 
   <a class="sticky-call" href="tel:+17195550186">
-    <span>Call the salon</span>
+    <span>Call the Salon</span>
     <small>(719) 555-0186</small>
   </a>
 

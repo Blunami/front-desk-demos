@@ -55,6 +55,7 @@
 }
 
 html {
+  color-scheme: light;
   scroll-padding-top: 5.5rem;
   scroll-padding-bottom: var(--sticky-h);
   scrollbar-color: var(--chip) var(--paper);
@@ -67,6 +68,8 @@ body {
   font-family: var(--body);
   font-size: 1.0625rem;
   line-height: 1.55;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   font-synthesis: none;
 }
 
@@ -161,6 +164,13 @@ body {
   padding-inline: 0;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  scroll-margin-top: 6rem;
+}
+
 h2 {
   font-size: clamp(2rem, 5vw, 3.2rem);
 }
@@ -220,6 +230,20 @@ h3 {
   background: var(--chip);
   border-color: var(--chip);
   color: var(--on-chip);
+}
+
+.btn-fill:hover,
+.after-hours-btn:hover,
+.header-call:hover,
+.sticky-call:hover {
+  background: #7d2f38;
+  border-color: #7d2f38;
+}
+
+.btn-line:hover,
+.nav a:hover,
+.text-link:hover {
+  background: rgba(23, 34, 38, 0.08);
 }
 
 .swatches {
@@ -464,6 +488,7 @@ dialog {
   padding: 0;
   background: transparent;
   max-width: min(28rem, calc(100% - 2rem));
+  overscroll-behavior: contain;
 }
 
 dialog::backdrop {
